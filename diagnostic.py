@@ -28,7 +28,7 @@ n = clamp(int(input("Sample size [1-1000]: ")), 1, 1000)
 N = clamp(int(input(f"Population size [{n}-9933]: ")), n, 9933)
 
 df = pd.read_csv("data/CharFreq.tsv", sep="\t")
-mod_df = df.sort_values(by="raw_freq", ascending=False).head(N).sample(50)
+mod_df = df.sort_values(by="raw_freq", ascending=False).head(N).sample(n)
 
 recognize = 0
 i = 0
