@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanzi Diagnostic</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Hanzi Diagnostic</h1>
+    <p>Test to see how many Chinese characters you recognize!</p>
+    
+    <form id="config-form">
+        <label for="n">Sample size [1-100]: </label>
+        <input type="number" name="n" value="50">
+
+        <label for="N">Population size [sample size or greater]: </label>
+        <input type="number" name="N" value="2000">
+
+        <button type="submit">Start Test</button>
+    </form>
+    
+    <div id="diagnostic-div" style="display: none;">
+        <p>Enter the character's pinyin (e.g. ni3 hao3)</p>
+        <p id="character"></p>
+        <form id="diagnostic-form">
+            <input type="text" name="pinyin">
+            <button type="submit">Submit</button>
+        </form>
+        <button type="button" id="reset-button" style="display: none;">Reset</button>
+        <p id="log"></p>
+    </div>
+
+    <script src="diagnostic.js"></script>
+</body>
+</html>
