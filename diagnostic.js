@@ -88,7 +88,7 @@ diagnosticForm.addEventListener("submit", (event) => {
     const formData = new FormData(event.target);
     const pinyin = formData.get("pinyin");
     
-    if (dataset[i]["pinyin"].split("/").includes(pinyin)) {
+    if (dataset[i]["pinyin"].split("/").includes(pinyin.toLowerCase())) {
         log.textContent = `Correct! (${dataset[i]["pinyin"]})\n` + log.textContent;
         recognized++;
     } else {
