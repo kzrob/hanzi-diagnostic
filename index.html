@@ -8,13 +8,25 @@
 </head>
 <body>
     <h1>Hanzi Diagnostic</h1>
-    <p>Test to see how many Chinese characters you recognize!</p>
+
+    <div id="info">
+        <a href="https://github.com/kzrob/hanzi-diagnostic" target="_blank">GitHub Repository</a>
+        <p>Test to see how many Chinese characters you recognize!</p>
+
+        <h2>Instructions</h2>
+        <ol>
+            <li>Enter your sample size (n), which is the number of randomly selected characters that you will be tested on. For accuracy, I recommend a sample size of above 50.</li>
+            <li>Enter your population size (N). You will be tested on the top N most common characters used in Chinese. So, the lower this number, the easier the difficulty, and the inverse is true. Common values are 100 (novice), 500 (beginner), 1000 (intermediate), 2000 (advanced), 3500 (fluent), 5000 (native), 10000 (状元).</li>
+        </ol>
+
+        <h2>Start the Test</h2>
+    </div>
     
     <form id="config-form">
-        <label for="n">Sample size [1-100]: </label>
-        <input type="number" name="n" value="50">
+        <label for="n">Sample size (n) [10-100]: </label>
+        <input type="number" name="n" value="50" min="10" max="100">
 
-        <label for="N">Population size [sample size or greater]: </label>
+        <label for="N">Population size (N) [sample size or greater]: </label>
         <input type="number" name="N" value="2000">
 
         <button type="submit">Start Test</button>

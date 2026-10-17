@@ -18,6 +18,5 @@ The program estimates the real proportion of characters you recognize based on a
 
 ## To do
 
-- Create a web UI for this
-  - turn it into a flashcards type app, instead of entering the pinyin
+- Turn UI into a flashcards type app instead of entering the pinyin
 - Show both traditional and simplified

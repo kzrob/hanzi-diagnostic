@@ -61,6 +61,7 @@ let recognized = 0; // number of recognized characters
 const configForm = document.getElementById("config-form");
 const diagnosticForm = document.getElementById("diagnostic-form");
 const diagnosticDiv = document.getElementById("diagnostic-div");
+const info = document.getElementById("info");
 const character = document.getElementById("character");
 const log = document.getElementById("log");
 const resetButton = document.getElementById("reset-button");
@@ -71,10 +72,11 @@ let dataset = fetchCSV("data/CharFreq.tsv").then(data => {dataset = data;});
 configForm.addEventListener("submit", (event) => {
     event.preventDefault();
     configForm.style.display = "none";
+    info.style.display = "none";
     diagnosticDiv.style.display = "block";
     
     const formData = new FormData(event.target);
-    n = clamp(parseInt(formData.get("n")), 1, 100);
+    n = clamp(parseInt(formData.get("n")), 10, 100);
     N = clamp(parseInt(formData.get("N")), n, 9933);
 
     i = randomInt(1, N);
@@ -114,6 +116,7 @@ diagnosticForm.addEventListener("submit", (event) => {
 });
 
 resetButton.addEventListener("click", () => {
+    info.style.display = "block";
     diagnosticDiv.style.display = "none";
     configForm.style.display = "flex";
     diagnosticForm.style.display = "flex";
